@@ -10,7 +10,11 @@ int main() {
     vector<Pokemon> pokedex;
 
     //Pikachu 
-    Stats pikaStats(35, 55, 40, 50, 50, 90);
+    Stats pikaStats(35,55,40,50,50,90);
+
+    pikaStats.setIVs(0,0,0,0,0,0);
+    pikaStats.setEVs(0,0,0,0,0,0);
+    pikaStats.setNature("Serious");
 
     Pokemon pikachu("Pikachu",25,"Electric","","Kanto","A friendly electric mouse.",pikaStats);
 

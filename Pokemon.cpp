@@ -53,9 +53,9 @@ void Pokemon::display() {
     cout << "Region: " << region << endl;
     cout << "Pokedex: " << pokedexEntry << endl;
 
-    cout << "\nStats:\n";
-    stats.display();
-
+    cout << "\n=========================\n";
+    cout << "BASE STATS\n";
+    stats.displayBaseStats();
     cout << "\nAbilities:\n";
     for (auto &a : abilities)
         a.display();
@@ -63,4 +63,7 @@ void Pokemon::display() {
     cout << "\nLocations:\n";
     for (auto &l : locations)
         l.display();
+}
+void Pokemon::showStatsAtLevel() {
+    stats.displayAtLevel();
 }

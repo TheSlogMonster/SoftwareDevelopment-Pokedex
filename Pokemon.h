@@ -32,8 +32,7 @@ public:
     void addAbility(const Ability& ability);
     void addLocation(const Location& location);
     void display();
-
-    
+    void showStatsAtLevel();
     string getName() const;
     int getID() const;
 };
