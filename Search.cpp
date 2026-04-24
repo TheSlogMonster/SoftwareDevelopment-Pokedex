@@ -13,9 +13,10 @@ void handlePokemonMenu(Pokemon& p) {
 
     do {
         cout << "\n--- Pokemon Options ---\n";
-        cout << "1. View Full Details\n";
+        cout << "1. View Basic Details\n";
         cout << "2. View Stats at Specific Level\n";
-        cout << "3. Back to Main Menu\n";
+        cout << "3. View Type Matchups\n";
+        cout << "4. Back to Main Menu\n";
         cout << "Choice: ";
         cin >> choice;
 
@@ -26,8 +27,11 @@ void handlePokemonMenu(Pokemon& p) {
                 p.showStatsAtLevel();
            
         }
+        else if (choice == 3) {
+                p.displayTypeMatchups();
+}
 
-    } while (choice != 3);
+    } while (choice != 4);
 }
 void searchByName(vector<Pokemon>& pokedex, string name) {
     name = toLowerCase(name);

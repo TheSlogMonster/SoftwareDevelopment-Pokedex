@@ -3,9 +3,9 @@
 #include <algorithm>
 using namespace std;
 
-/* =========================
-   Constructors
-========================= */
+
+//Constructors
+
 
 Stats::Stats() {
     baseHP = baseAtk = baseDef = baseSpAtk = baseSpDef = baseSpeed = 0;
@@ -32,9 +32,8 @@ Stats::Stats(int bhp, int batk, int bdef, int bspatk, int bspdef, int bspeed) {
     natureName = "Hardy";
 }
 
-/* =========================
-   IV / EV setters
-========================= */
+//IV / EV setters
+
 
 void Stats::setIVs(int hp, int atk, int def, int spatk, int spdef, int speed) {
     ivHP = min(31, max(0, hp));
@@ -56,7 +55,7 @@ void Stats::setEVs(int hp, int atk, int def, int spatk, int spdef, int speed) {
     auto fixEV = [](int v) {
         if (v < 0) return 0;
         if (v > 252) return 252;
-        return (v / 4) * 4; // must be multiple of 4
+        return (v / 4) * 4; //  multiple of 4
     };
 
     evHP = fixEV(hp);
@@ -67,9 +66,9 @@ void Stats::setEVs(int hp, int atk, int def, int spatk, int spdef, int speed) {
     evSpeed = fixEV(speed);
 }
 
-/* =========================
-   Nature system (25 natures)
-========================= */
+
+ //Nature system (25 natures)
+
 
 void Stats::setNature(string name) {
     natureName = name;
@@ -77,45 +76,45 @@ void Stats::setNature(string name) {
     // reset all to neutral
     natAtk = natDef = natSpAtk = natSpDef = natSpeed = 1.0;
 
-    // ===== Attack natures =====
+    // Attack natures 
     if (name == "Lonely")      { natAtk = 1.1; natDef = 0.9; }
     else if (name == "Brave")  { natAtk = 1.1; natSpeed = 0.9; }
     else if (name == "Adamant"){ natAtk = 1.1; natSpAtk = 0.9; }
     else if (name == "Naughty"){ natAtk = 1.1; natSpDef = 0.9; }
 
-    // ===== Defense natures =====
+    // Defense natures 
     else if (name == "Bold")    { natDef = 1.1; natAtk = 0.9; }
     else if (name == "Relaxed") { natDef = 1.1; natSpeed = 0.9; }
     else if (name == "Impish")  { natDef = 1.1; natSpAtk = 0.9; }
     else if (name == "Lax")     { natDef = 1.1; natSpDef = 0.9; }
 
-    // ===== Speed natures =====
+    // Speed natures 
     else if (name == "Timid")   { natSpeed = 1.1; natAtk = 0.9; }
     else if (name == "Hasty")   { natSpeed = 1.1; natDef = 0.9; }
     else if (name == "Jolly")   { natSpeed = 1.1; natSpAtk = 0.9; }
     else if (name == "Naive")   { natSpeed = 1.1; natSpDef = 0.9; }
 
-    // ===== Special Attack natures =====
+    // Special Attack natures
     else if (name == "Modest")  { natSpAtk = 1.1; natAtk = 0.9; }
     else if (name == "Mild")    { natSpAtk = 1.1; natDef = 0.9; }
     else if (name == "Quiet")   { natSpAtk = 1.1; natSpeed = 0.9; }
     else if (name == "Rash")    { natSpAtk = 1.1; natSpDef = 0.9; }
 
-    // ===== Special Defense natures =====
+    //  Special Defense natures 
     else if (name == "Calm")    { natSpDef = 1.1; natAtk = 0.9; }
     else if (name == "Gentle")  { natSpDef = 1.1; natDef = 0.9; }
     else if (name == "Sassy")   { natSpDef = 1.1; natSpeed = 0.9; }
     else if (name == "Careful") { natSpDef = 1.1; natSpAtk = 0.9; }
 
-    // ===== Neutral natures (5) =====
+    // Neutral natures (5) 
     else {
         natAtk = natDef = natSpAtk = natSpDef = natSpeed = 1.0;
     }
 }
 
-/* =========================
-   Core formulas
-========================= */
+
+ //Core formulas
+
 
 int Stats::calcHP(int base, int iv, int ev, int level) {
     return (((2 * base + iv + (ev / 4)) * level) / 100) + level + 10;
@@ -125,9 +124,7 @@ int Stats::calcStat(int base, int iv, int ev, float nature, int level) {
     return (int)((((2 * base + iv + (ev / 4)) * level) / 100 + 5) * nature);
 }
 
-/* =========================
-   Display
-========================= */
+
 
 void Stats::displayBaseStats() {
     cout << "HP Base: " << baseHP << endl;
@@ -151,9 +148,7 @@ void Stats::displayAtLevel() {
         return;
     }
 
-    // =========================
-    // IV INPUT (VALIDATED)
-    // =========================
+    
     int ivH, ivA, ivD, ivSA, ivSD, ivS;
 
     cout << "\nEnter IVs (0-31 each stat)\n";
@@ -190,9 +185,7 @@ void Stats::displayAtLevel() {
 
     setIVs(ivH, ivA, ivD, ivSA, ivSD, ivS);
 
-    // =========================
-    // EV INPUT (VALIDATED)
-    // =========================
+ 
     int evH, evA, evD, evSA, evSD, evS;
     int totalEV = 0;
 
@@ -240,9 +233,7 @@ void Stats::displayAtLevel() {
         setEVs(evH, evA, evD, evSA, evSD, evS);
     }
 
-    // =========================
-    // NATURE INPUT + VALIDATION
-    // =========================
+  
     string natureInput;
     cout << "\nEnter Nature: ";
     cin >> natureInput;
@@ -270,10 +261,7 @@ void Stats::displayAtLevel() {
     }
 
     setNature(natureInput);
-
-    // =========================
     // OUTPUT
-    // =========================
     cout << "\n=========================\n";
     cout << "FINAL STATS AT LEVEL " << level << endl;
     cout << "=========================\n";

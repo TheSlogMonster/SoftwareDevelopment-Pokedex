@@ -3,6 +3,7 @@
 
 #include <string>
 #include <vector>
+#include <algorithm>
 #include "Ability.h"
 #include "Stats.h"
 #include "Location.h"
@@ -31,8 +32,12 @@ public:
     
     void addAbility(const Ability& ability);
     void addLocation(const Location& location);
+
     void display();
     void showStatsAtLevel();
+    void displaySummary() const;
+    void displayTypeMatchups();
+
     string getName() const;
     int getID() const;
 };

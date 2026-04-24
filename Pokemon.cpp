@@ -1,4 +1,5 @@
 #include "Pokemon.h"
+#include "TypeChart.h"
 #include <iostream>
 
 //Default 
@@ -66,4 +67,67 @@ void Pokemon::display() {
 }
 void Pokemon::showStatsAtLevel() {
     stats.displayAtLevel();
+}
+void Pokemon::displaySummary() const {
+    cout << "ID: " << id << " | Name: " << name << " | Type: " << type1;
+
+    if (type2 != "") {
+        cout << "/" << type2;
+    }
+
+    cout << endl;
+}
+void listAllPokemon(const vector<Pokemon>& pokedex) {
+    cout << "\n===== POKEDEX LIST =====\n";
+
+    // Create a copy so original order is preserved
+    vector<Pokemon> sortedList = pokedex;
+
+    // Sort by ID
+    sort(sortedList.begin(), sortedList.end(),
+        [](const Pokemon& a, const Pokemon& b) {
+            return a.getID() < b.getID();
+        });
+
+    // Display sorted list
+    for (const auto &p : sortedList) {
+        p.displaySummary();
+    }
+
+    cout << "=========================\n";
+}
+
+void Pokemon::displayTypeMatchups() {
+    string allTypes[] = {
+        "Normal","Fire","Water","Electric","Grass","Ice",
+        "Fighting","Poison","Ground","Flying","Psychic",
+        "Bug","Rock","Ghost","Dragon","Dark","Steel","Fairy"
+    };
+
+    cout << "\n=== TYPE MATCHUPS ===\n";
+
+    for (int i = 0; i < 18; i++) {
+        float mult = getEffectiveness(allTypes[i], type1);
+
+        if (type2 != "")
+            mult *= getEffectiveness(allTypes[i], type2);
+
+        if (mult == 2.0) {
+            cout << allTypes[i] << "  Weak (2x)\n";
+        }
+        else if (mult == 4.0) {
+            cout << allTypes[i] << "  VERY Weak (4x)\n";
+        }
+        else if (mult == 0.5) {
+            cout << allTypes[i] << "  Resistant (0.5x)\n";
+        }
+        else if (mult == 0.25) {
+            cout << allTypes[i] << "  VERY Resistant (0.25x)\n";
+        }
+        else if (mult == 0.0) {
+            cout << allTypes[i] << "  Immune (0x)\n";
+        }
+    }
+
+    cout << "=====================\n";
 }
