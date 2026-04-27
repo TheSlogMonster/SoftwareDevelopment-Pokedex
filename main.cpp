@@ -171,6 +171,118 @@ int main() {
 
     pokedex.push_back(caterpie);
     
+    //Metapod
+    Stats metaStats(50,20,55,25,25,30);
+
+    metaStats.setIVs(0,0,0,0,0,0);
+    metaStats.setEVs(0,0,0,0,0,0);
+    metaStats.setNature("Serious");
+
+    Pokemon metapod("Metapod",11,"Bug","","Kanto","It prepares for evolution by hardening its shell as much as possible to protect its soft body.",metaStats);
+
+    metapod.addAbility(Ability("Shed Skin", "The Pokemon may heal its own status conditions."));
+    metapod.addLocation(Location("Viridian Forest"));
+
+    pokedex.push_back(metapod);
+    
+    //Butterfree
+    Stats butterStats(60,45,50,80,80,70);
+
+    butterStats.setIVs(0,0,0,0,0,0);
+    butterStats.setEVs(0,0,0,0,0,0);
+    butterStats.setNature("Serious");
+
+    Pokemon butterfree("Butterfree",12,"Bug","Flying","Kanto","In battle, it flaps its wings at high speed to release highly toxic dust into the air.",butterStats);
+
+    butterfree.addAbility(Ability("Compound Eyes", "Boosts the Pokemon's accuracy."));
+    butterfree.addLocation(Location("Evolve Metapod"));
+
+    pokedex.push_back(butterfree);
+    
+    //Weedle
+    Stats weedStats(40,35,30,20,20,50);
+
+    weedStats.setIVs(0,0,0,0,0,0);
+    weedStats.setEVs(0,0,0,0,0,0);
+    weedStats.setNature("Serious");
+
+    Pokemon weedle("Weedle",13,"Bug","","Kanto","Often found in forests, eating leaves. It has a sharp venmous stinger on its head.",weedStats);
+
+    weedle.addAbility(Ability("Shield Dust", "Blocks the additional effects of attacks taken"));
+    weedle.addLocation(Location("Viridian Forest"));
+
+    pokedex.push_back(weedle);
+
+    //Kakuna
+    Stats kakuStats(45,25,50,25,25,35);
+
+    kakuStats.setIVs(0,0,0,0,0,0);
+    kakuStats.setEVs(0,0,0,0,0,0);
+    kakuStats.setNature("Serious");
+
+    Pokemon kakuna("Kakuna",14,"Bug","","Kanto","Able to move only slightly. When endangered, it may stick out its stinger and poison its enemy.",kakuStats);
+
+    kakuna.addAbility(Ability("Shed Skin", "The Pokemon may heal its own status conditions."));
+    kakuna.addLocation(Location("Viridian Forest"));
+
+    pokedex.push_back(kakuna);
+
+    //Beedrill
+    Stats beeStats(65,80,40,45,80,75);
+
+    beeStats.setIVs(0,0,0,0,0,0);
+    beeStats.setEVs(0,0,0,0,0,0);
+    beeStats.setNature("Serious");
+
+    Pokemon beedrill("Beedrill",15,"Bug","Poison","Kanto","It can take down any opponent with its poerful poison stingers. It sometimes attacks in swarms.",beeStats);
+
+    beedrill.addAbility(Ability("Swarm", "Powers up Bug-type moves in a pinch."));
+    beedrill.addLocation(Location("Evolve Kakuna"));
+
+    pokedex.push_back(beedrill);
+
+    //Pidgey
+    Stats pidgeyStats(40,45,40,35,35,56);
+
+    pidgeyStats.setIVs(0,0,0,0,0,0);
+    pidgeyStats.setEVs(0,0,0,0,0,0);
+    pidgeyStats.setNature("Serious");
+
+    Pokemon pidgey("Pidgey",16,"Normal","Flying","Kanto","Very docile. If attacked, it will often kick up sand to protect itself rather than fight back.",pidgeyStats);
+
+    pidgey.addAbility(Ability("Keen Eye", "Prevents loss of accuracy."));
+    pidgey.addLocation(Location("Routes 1 - 3, 5 - 8, 12-15, 21, 24 and 25"));
+
+    pokedex.push_back(pidgey);
+
+    //Pidgeotto
+    Stats pidgeottoStats(63,55,50,50,50,71);
+
+    pidgeottoStats.setIVs(0,0,0,0,0,0);
+    pidgeottoStats.setEVs(0,0,0,0,0,0);
+    pidgeottoStats.setNature("Serious");
+
+    Pokemon pidgeotto("Pidgeotto",17,"Normal","Flying","Kanto","It slowly flies in a cicular pattern, all the while keeping a sharp lookout for prey.",pidgeottoStats);
+
+    pidgeotto.addAbility(Ability("Keen Eye", "Prevents loss of accuracy."));
+    pidgeotto.addLocation(Location("Routes 14, 15 and 21"));
+
+    pokedex.push_back(pidgeotto);
+
+    //Pidgeot
+    Stats pidgeotStats(83,80,75,70,70,91);
+
+    pidgeotStats.setIVs(0,0,0,0,0,0);
+    pidgeotStats.setEVs(0,0,0,0,0,0);
+    pidgeotStats.setNature("Serious");
+
+    Pokemon pidgeot("Pidgeot",18,"Normal","Flying","Kanto","It spreads its beautiful wings wide to frighten its enemies. It can fly at Mach 2 speed.",pidgeotStats);
+
+    pidgeot.addAbility(Ability("Keen Eye", "Prevents loss of accuracy."));
+    pidgeot.addLocation(Location("Evolve Pidgeotto"));
+
+    pokedex.push_back(pidgeot);
+
     //Menu
     int choice;
 
