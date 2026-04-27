@@ -34,7 +34,7 @@ int main() {
         "It carries a seed on its back right from birth. As its body grows larger, the seed does too.",
         bulbaStats);
 
-    bulbasaur.addAbility(Ability("Overgrow", "Powers up Grass-type moves when the Pokémon's HP is low."));
+    bulbasaur.addAbility(Ability("Overgrow", "Powers up Grass-type moves when the Pokemon's HP is low."));
     bulbasaur.addLocation(Location("First partner pokemon only"));
 
     pokedex.push_back(bulbasaur);
@@ -48,9 +48,9 @@ int main() {
 
     Pokemon ivysaur("Ivysaur",2,"Grass","Poison","Kanto",
         "The bulb on its back grows as it absorbs nutrients. The bulb gives off a pleasant aroma when it blooms.",
-        bulbaStats);
+        ivyStats);
 
-    ivysaur.addAbility(Ability("Overgrow", "Powers up Grass-type moves when the Pokémon's HP is low."));
+    ivysaur.addAbility(Ability("Overgrow", "Powers up Grass-type moves when the Pokemon's HP is low."));
     ivysaur.addLocation(Location("First partner pokemon only"));
 
     pokedex.push_back(ivysaur);
@@ -64,9 +64,9 @@ int main() {
 
     Pokemon venosaur("Venusaur",3,"Grass","Poison","Kanto",
         "It carries a seed on its back right from birth. As its body grows larger, the seed does too.",
-        bulbaStats);
+        venuStats);
 
-    venosaur.addAbility(Ability("Overgrow", "Powers up Grass-type moves when the Pokémon's HP is low."));
+    venosaur.addAbility(Ability("Overgrow", "Powers up Grass-type moves when the Pokemon's HP is low."));
     venosaur.addLocation(Location("First partner pokemon only"));
 
     pokedex.push_back(venosaur);
@@ -82,7 +82,7 @@ int main() {
         "If it's healthy, the flame on the tip of its tail will burn vigrously, even if it gets a bit wet.",
         charmanStats);
 
-    charmander.addAbility(Ability("Blaze", "Powers up Fire-type moves when the Pokémon's HP is low."));
+    charmander.addAbility(Ability("Blaze", "Powers up Fire-type moves when the Pokemon's HP is low."));
     charmander.addLocation(Location("First partner pokemon only"));
 
     pokedex.push_back(charmander);
@@ -96,7 +96,7 @@ int main() {
 
     Pokemon charmeleon("Charmeleon",5,"Fire","","Kanto","When it swings its burning tail, it elevates the temperature to unbearably high levels.",charmelStats);
 
-    charmeleon.addAbility(Ability("Blaze", "Powers up Fire-type moves when the Pokémon's HP is low."));
+    charmeleon.addAbility(Ability("Blaze", "Powers up Fire-type moves when the Pokemon's HP is low."));
     charmeleon.addLocation(Location("First partner pokemon only"));
 
     pokedex.push_back(charmeleon);
@@ -110,7 +110,7 @@ int main() {
 
     Pokemon charizard("Charizard",6,"Fire","Flying","Kanto","Breathing intense, hot flames, it can melt almost anything. Its breath inflicts terrible pain on enemies.",charizStats);
 
-    charizard.addAbility(Ability("Blaze", "Powers up Fire-type moves when the Pokémon's HP is low."));
+    charizard.addAbility(Ability("Blaze", "Powers up Fire-type moves when the Pokemon's HP is low."));
     charizard.addLocation(Location("First partner pokemon only"));
 
     pokedex.push_back(charizard);
@@ -124,7 +124,7 @@ int main() {
 
     Pokemon squirtle("Squirtle",7,"Water","","Kanto","Shoots water at prey while in the water. Withdraws into its shell when in danger.",squirtStats);
 
-    squirtle.addAbility(Ability("Torrent", "Powers up Water-type moves when the Pokémon's HP is low."));
+    squirtle.addAbility(Ability("Torrent", "Powers up Water-type moves when the Pokemon's HP is low."));
     squirtle.addLocation(Location("First partner pokemon only"));
 
     pokedex.push_back(squirtle);
@@ -138,7 +138,7 @@ int main() {
 
     Pokemon wartortle("Wartortle",8,"Water","","Kanto","It cleverly controls its furry ears and tail to maintain its balance while swimming.",wartStats);
 
-    wartortle.addAbility(Ability("Torrent", "Powers up Water-type moves when the Pokémon's HP is low."));
+    wartortle.addAbility(Ability("Torrent", "Powers up Water-type moves when the Pokemon's HP is low."));
     wartortle.addLocation(Location("First partner pokemon only"));
 
     pokedex.push_back(wartortle);
@@ -152,7 +152,7 @@ int main() {
 
     Pokemon blastoise("Blastoise",9,"Water","","Kanto","Once it takes aim at its enemy, it blasts out water with even more force than a fire hose",blastStats);
 
-    blastoise.addAbility(Ability("Torrent", "Powers up Water-type moves when the Pokémon's HP is low."));
+    blastoise.addAbility(Ability("Torrent", "Powers up Water-type moves when the Pokemon's HP is low."));
     blastoise.addLocation(Location("First partner pokemon only"));
 
     pokedex.push_back(blastoise);
