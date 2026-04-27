@@ -291,7 +291,8 @@ int main() {
         cout << "1. Search by Pokemon Name\n";
         cout << "2. Search by Pokemon ID\n";
         cout << "3. View All Pokemon\n";
-        cout << "4. Exit\n";
+        cout << "4. Save Pokedex to File\n";
+        cout << "5. Exit\n";
         cout << "Enter choice: ";
         cin >> choice;
 
@@ -310,8 +311,12 @@ int main() {
         else if (choice == 3) {
         listAllPokemon(pokedex);
         }
+        else if (choice == 4) {
+        savePokedexToFile(pokedex);
+        }
+        
 
-    } while (choice != 4);
+    } while (choice != 5);
 
     return 0;
 }

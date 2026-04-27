@@ -1,4 +1,3 @@
-
 #include <algorithm>
 #include "Search.h"
 
@@ -36,23 +35,56 @@ void handlePokemonMenu(Pokemon& p) {
 void searchByName(vector<Pokemon>& pokedex, string name) {
     name = toLowerCase(name);
 
-    for (auto &p : pokedex) {
-        if (toLowerCase(p.getName()) == name) {
-            handlePokemonMenu(p);
-            return;
-        }
-    }
+    auto it = find_if(pokedex.begin(), pokedex.end(),
+        [name](const Pokemon& p) {
+            return toLowerCase(p.getName()) == name;
+        });
 
-    cout << "Pokemon not found.\n";
+    if (it != pokedex.end()) {
+        handlePokemonMenu(*it);
+    } else {
+        cout << "Pokemon not found.\n";
+    }
 }
 
 void searchByID(vector<Pokemon>& pokedex, int id) {
-    for (auto &p : pokedex) {
-        if (p.getID() == id) {
-            handlePokemonMenu(p);
-            return;
-        }
+
+    auto it = find_if(pokedex.begin(), pokedex.end(),
+        [id](const Pokemon& p) {
+            return p.getID() == id;
+        });
+
+    if (it != pokedex.end()) {
+        handlePokemonMenu(*it);
+    } else {
+        cout << "Pokemon not found.\n";
+    }
+}
+
+void savePokedexToFile(const vector<Pokemon>& pokedex) {
+    ofstream file("pokedex.txt");
+
+    if (!file) {
+        cout << "Error: Could not open file for writing.\n";
+        return;
     }
 
-    cout << "Pokemon not found.\n";
+    file << "SAVED POKEDEX:\n";
+
+    vector<Pokemon> sortedList = pokedex;
+
+    sort(sortedList.begin(), sortedList.end(),
+        [](const Pokemon& a, const Pokemon& b) {
+            return a.getID() < b.getID();
+        });
+
+    for (const auto& p : sortedList) {
+        p.writeSummaryToFile(file);
+    }
+
+    file << "\n";
+
+    file.close();
+
+    cout << "Pokedex saved to pokedex.txt successfully.\n";
 }

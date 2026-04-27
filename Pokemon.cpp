@@ -97,6 +97,16 @@ void listAllPokemon(const vector<Pokemon>& pokedex) {
     cout << "=========================\n";
 }
 
+void Pokemon::writeSummaryToFile(ofstream& file) const {
+    file << "ID: " << id << " | Name: " << name << " | Type: " << type1;
+
+    if (type2 != "") {
+        file << "/" << type2;
+    }
+
+    file << endl;
+}
+
 void Pokemon::displayTypeMatchups() {
     string allTypes[] = {
         "Normal","Fire","Water","Electric","Grass","Ice",
