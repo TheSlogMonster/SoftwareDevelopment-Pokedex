@@ -71,6 +71,106 @@ int main() {
 
     pokedex.push_back(venosaur);
 
+    //Charmander
+    Stats charmanStats(39,52,43,60,50,65);
+
+    charmanStats.setIVs(0,0,0,0,0,0);
+    charmanStats.setEVs(0,0,0,0,0,0);
+    charmanStats.setNature("Serious");
+
+    Pokemon charmander("Charmander",4,"Fire","","Kanto",
+        "If it's healthy, the flame on the tip of its tail will burn vigrously, even if it gets a bit wet.",
+        charmanStats);
+
+    charmander.addAbility(Ability("Blaze", "Powers up Fire-type moves when the Pokémon's HP is low."));
+    charmander.addLocation(Location("First partner pokemon only"));
+
+    pokedex.push_back(charmander);
+
+    //Charmeleon 
+    Stats charmelStats(58,64,58,80,65,80);
+
+    charmelStats.setIVs(0,0,0,0,0,0);
+    charmelStats.setEVs(0,0,0,0,0,0);
+    charmelStats.setNature("Serious");
+
+    Pokemon charmeleon("Charmeleon",5,"Fire","","Kanto","When it swings its burning tail, it elevates the temperature to unbearably high levels.",charmelStats);
+
+    charmeleon.addAbility(Ability("Blaze", "Powers up Fire-type moves when the Pokémon's HP is low."));
+    charmeleon.addLocation(Location("First partner pokemon only"));
+
+    pokedex.push_back(charmeleon);
+
+    //Charizard
+    Stats charizStats(78,84,78,109,85,100);
+
+    charizStats.setIVs(0,0,0,0,0,0);
+    charizStats.setEVs(0,0,0,0,0,0);
+    charizStats.setNature("Serious");
+
+    Pokemon charizard("Charizard",6,"Fire","Flying","Kanto","Breathing intense, hot flames, it can melt almost anything. Its breath inflicts terrible pain on enemies.",charizStats);
+
+    charizard.addAbility(Ability("Blaze", "Powers up Fire-type moves when the Pokémon's HP is low."));
+    charizard.addLocation(Location("First partner pokemon only"));
+
+    pokedex.push_back(charizard);
+
+    //Squirtle
+    Stats squirtStats(44,48,65,50,64,43);
+
+    squirtStats.setIVs(0,0,0,0,0,0);
+    squirtStats.setEVs(0,0,0,0,0,0);
+    squirtStats.setNature("Serious");
+
+    Pokemon squirtle("Squirtle",7,"Water","","Kanto","Shoots water at prey while in the water. Withdraws into its shell when in danger.",squirtStats);
+
+    squirtle.addAbility(Ability("Torrent", "Powers up Water-type moves when the Pokémon's HP is low."));
+    squirtle.addLocation(Location("First partner pokemon only"));
+
+    pokedex.push_back(squirtle);
+
+    //Wartortle
+    Stats wartStats(59,63,80,65,80,58);
+
+    wartStats.setIVs(0,0,0,0,0,0);
+    wartStats.setEVs(0,0,0,0,0,0);
+    wartStats.setNature("Serious");
+
+    Pokemon wartortle("Wartortle",8,"Water","","Kanto","It cleverly controls its furry ears and tail to maintain its balance while swimming.",wartStats);
+
+    wartortle.addAbility(Ability("Torrent", "Powers up Water-type moves when the Pokémon's HP is low."));
+    wartortle.addLocation(Location("First partner pokemon only"));
+
+    pokedex.push_back(wartortle);
+    
+    //Blastoise
+    Stats blastStats(79,83,100,85,105,78);
+
+    blastStats.setIVs(0,0,0,0,0,0);
+    blastStats.setEVs(0,0,0,0,0,0);
+    blastStats.setNature("Serious");
+
+    Pokemon blastoise("Blastoise",9,"Water","","Kanto","Once it takes aim at its enemy, it blasts out water with even more force than a fire hose",blastStats);
+
+    blastoise.addAbility(Ability("Torrent", "Powers up Water-type moves when the Pokémon's HP is low."));
+    blastoise.addLocation(Location("First partner pokemon only"));
+
+    pokedex.push_back(blastoise);
+
+    //Caterpie
+    Stats caterStats(45,30,35,20,20,45);
+
+    caterStats.setIVs(0,0,0,0,0,0);
+    caterStats.setEVs(0,0,0,0,0,0);
+    caterStats.setNature("Serious");
+
+    Pokemon caterpie("Caterpie",10,"Bug","","Kanto","If you touch the feeler on top of its head, it will release a horrible stink to protect itself.",caterStats);
+
+    caterpie.addAbility(Ability("Shield Dust", "Blocks the additional effects of attacks taken"));
+    caterpie.addLocation(Location("Viridian Forest"));
+
+    pokedex.push_back(caterpie);
+    
     //Menu
     int choice;
 
